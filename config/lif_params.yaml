@@ -1,0 +1,40 @@
+# LIF Neuron Parameters for Drosophila
+# Based on Hodgkin-Huxley dynamics and Drosophila physiology
+
+default:
+  # Membrane properties
+  C_m: 1.0                    # Membrane capacitance (μF/cm²)
+  g_leak: 0.1                 # Leak conductance (mS/cm²)
+  E_leak: -65.0               # Leak reversal potential (mV)
+  tau_m: 15.0                 # Membrane time constant (ms)
+  area: 1000.0                # Surface area (μm²)
+  
+  # Spike properties
+  V_th: -50.0                 # Spike threshold (mV)
+  V_reset: -65.0              # Reset potential (mV)
+  tau_ref: 1.5                # Absolute refractory period (ms)
+  
+  # Noise
+  sigma_noise: 0.5            # Input noise std (pA)
+
+excitatory:
+  # Lower threshold, faster dynamics
+  C_m: 1.0
+  g_leak: 0.15
+  E_leak: -60.0
+  V_th: -45.0
+  V_reset: -60.0
+  tau_m: 10.0
+  tau_ref: 1.0
+  sigma_noise: 0.3
+
+inhibitory:
+  # Higher threshold, slower dynamics
+  C_m: 1.2
+  g_leak: 0.08
+  E_leak: -70.0
+  V_th: -55.0
+  V_reset: -70.0
+  tau_m: 20.0
+  tau_ref: 2.0
+  sigma_noise: 0.4

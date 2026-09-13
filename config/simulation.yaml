@@ -1,0 +1,38 @@
+# Simulation Configuration
+
+simulation:
+  duration: 1000.0          # Simulation duration (ms)
+  dt: 0.1                   # Integration timestep (ms)
+  verbose: true             # Show progress
+
+recording:
+  record_spikes: true       # Record spike times
+  record_voltage: false     # Record membrane potentials (memory intensive)
+  record_current: false     # Record synaptic currents
+  voltage_sample_rate: 10   # Sample every N steps (if recording)
+
+stimulus:
+  type: "poisson"           # poisson, step, sinusoid, none
+  rate: 5.0                 # Spike rate (Hz) for Poisson
+  amplitude: 50.0           # Current amplitude (pA)
+  fraction: 0.1             # Fraction of neurons receiving input
+  start_time: 100.0         # Stimulus start (ms) for step
+  end_time: 900.0           # Stimulus end (ms) for step
+
+analysis:
+  compute_firing_rates: true
+  compute_isis: true
+  compute_correlations: true
+  compute_bursts: true
+  correlation_window: 10.0  # Time window for correlation (ms)
+  burst_isi_threshold: 20.0 # ISI threshold for burst detection (ms)
+
+output:
+  save_results: true
+  output_dir: "./results"
+  save_spikes_csv: false
+  save_voltages_hdf5: false
+  plot_raster: true
+  plot_population: true
+  plot_firing_rates: true
+  plot_isis: true

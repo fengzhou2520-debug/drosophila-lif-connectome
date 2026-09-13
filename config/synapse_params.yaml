@@ -1,0 +1,74 @@
+# Synaptic Parameters by Neurotransmitter Type
+# Drosophila-specific kinetics
+
+glutamate:
+  # AMPA/iGluR-mediated excitatory transmission
+  delay: 1.0              # Transmission delay (ms)
+  g_syn: 2.0              # Synaptic conductance (nS)
+  E_rev: 0.0              # Reversal potential (mV)
+  tau_decay: 3.0          # Decay time constant (ms)
+  tau_rise: 0.5           # Rise time (ms)
+  U: 0.5                  # Initial release probability
+  tau_fac: 30.0           # Facilitation time constant (ms)
+  tau_dep: 200.0          # Depression time constant (ms)
+  q_size: 1.0             # Quantal size (relative)
+
+gaba:
+  # GABA-A receptor-mediated inhibition
+  delay: 1.0
+  g_syn: 1.0
+  E_rev: -70.0            # Inhibitory reversal potential
+  tau_decay: 5.0
+  tau_rise: 1.0
+  U: 0.3                  # Lower initial release probability
+  tau_fac: 20.0
+  tau_dep: 100.0          # Stronger depression
+  q_size: 1.0
+
+acetylcholine:
+  # Nicotinic acetylcholine receptor-mediated
+  delay: 0.5              # Faster transmission
+  g_syn: 1.5
+  E_rev: 0.0
+  tau_decay: 10.0         # Slower decay
+  tau_rise: 1.5
+  U: 0.4
+  tau_fac: 40.0           # Stronger facilitation
+  tau_dep: 150.0
+  q_size: 1.0
+
+dopamine:
+  # Modulatory dopaminergic transmission
+  delay: 2.0              # Longer delay (volume transmission)
+  g_syn: 0.5              # Weak synaptic effect
+  E_rev: 0.0
+  tau_decay: 50.0         # Much slower decay
+  tau_rise: 5.0
+  U: 0.2
+  tau_fac: 100.0
+  tau_dep: 500.0
+  q_size: 0.5
+
+serotonin:
+  # Modulatory serotonergic transmission
+  delay: 3.0
+  g_syn: 0.3
+  E_rev: 0.0
+  tau_decay: 100.0        # Very slow decay
+  tau_rise: 10.0
+  U: 0.1
+  tau_fac: 200.0
+  tau_dep: 1000.0
+  q_size: 0.3
+
+octopamine:
+  # Modulatory octopaminergic transmission
+  delay: 2.5
+  g_syn: 0.4
+  E_rev: 0.0
+  tau_decay: 75.0
+  tau_rise: 7.5
+  U: 0.15
+  tau_fac: 150.0
+  tau_dep: 800.0
+  q_size: 0.4
